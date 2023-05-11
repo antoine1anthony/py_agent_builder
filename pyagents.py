@@ -46,12 +46,20 @@ if __name__ == "__main__":
     api_key_chatbot8 = os.getenv("OPENAI_API_KEY_CHATBOT8")
     api_key_chatbot9 = os.getenv("OPENAI_API_KEY_CHATBOT9")
 
+    # Create directory for chat logs
+    chat_logs_dir = "chat_logs"
+    if not os.path.exists(chat_logs_dir):
+        os.makedirs(chat_logs_dir)
+
     # Take user input for the project idea and details
     print("\nPlease enter your project name:")
     project_name_input = input()
     project_name_dir = project_name_input.replace(" ", "_")  # Replace spaces with underscores
-    if not os.path.exists(project_name_dir):  # Create the project directory if it doesn't exist
-        os.makedirs(project_name_dir)
+    
+    # Create directory for project logs
+    project_logs_dir = os.path.join(chat_logs_dir, project_name_dir)
+    if not os.path.exists(project_logs_dir):  # Create the project directory if it doesn't exist
+        os.makedirs(project_logs_dir)
 
     print("\nPlease enter the project description:")
     project_description_input = input()

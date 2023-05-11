@@ -2,3 +2,6 @@
 __pycache__
 # This is where the prompts used for the training are stored will be released soon
 prompts_used/
+# This is where the chat logs are stored
+chat_logs/
+AI_*/
