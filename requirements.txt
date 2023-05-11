@@ -1,0 +1,6 @@
+# requirements.txt
+openai
+colorama
+tiktoken
+playwright
+python-dotenv
