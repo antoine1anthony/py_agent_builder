@@ -33,18 +33,10 @@ if __name__ == "__main__":
     # Load environment variables
     load_dotenv()
 
-    # Set chatbot prompts and get the API keys from environment variables
+    # Set chatbot prompts and get the API key from environment variables
     # Remember to set these variables in your environment or .env file
    
-    api_key_chatbot1 = os.getenv("OPENAI_API_KEY_CHATBOT1")
-    api_key_chatbot2 = os.getenv("OPENAI_API_KEY_CHATBOT2")
-    api_key_chatbot3 = os.getenv("OPENAI_API_KEY_CHATBOT3")
-    api_key_chatbot4 = os.getenv("OPENAI_API_KEY_CHATBOT4")
-    api_key_chatbot5 = os.getenv("OPENAI_API_KEY_CHATBOT5")
-    api_key_chatbot6 = os.getenv("OPENAI_API_KEY_CHATBOT6")
-    api_key_chatbot7 = os.getenv("OPENAI_API_KEY_CHATBOT7")
-    api_key_chatbot8 = os.getenv("OPENAI_API_KEY_CHATBOT8")
-    api_key_chatbot9 = os.getenv("OPENAI_API_KEY_CHATBOT9")
+    api_key_chatbot = os.getenv("OPENAI_API_KEY_CHATBOT")
 
     # Create directory for chat logs
     chat_logs_dir = "chat_logs"
@@ -67,8 +59,8 @@ if __name__ == "__main__":
     project_idea = f"{project_name_input} - {project_description_input}"
 
     # Create list of api keys
-    api_keys = [ api_key_chatbot1, api_key_chatbot2, api_key_chatbot3, api_key_chatbot4, api_key_chatbot5, api_key_chatbot6, api_key_chatbot7, api_key_chatbot8, api_key_chatbot9 ]
-
+    api_key = api_key_chatbot
+                
     # Update the assignment_description for each bot with the user's project idea
     assignment_description=f"Help brainstorm and design a project based on this idea: {project_idea} The tech stack must include React Native and TypeScript for the mobile app and Python for the endpoints. The database can be whatever suits the project's needs. Use vector databses for any long term memory if there is a need for an ai agent or chatbot. Your role is to provide input and suggestions related to your area of expertise."
 
@@ -91,7 +83,7 @@ if __name__ == "__main__":
     selected_bots = [bot for bot in all_bots if bot["name"].lower() in selected_bot_names]
 
     # Create the bots
-    created_bots = initialize_bots(selected_bots, assignment_description, api_keys)
+    created_bots = initialize_bots(selected_bots, assignment_description, api_key)
 
     # Number of turns for each chatbot
     num_turns = 20

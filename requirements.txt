@@ -4,3 +4,5 @@ colorama
 tiktoken
 playwright
 python-dotenv
+flask
+flask-cors

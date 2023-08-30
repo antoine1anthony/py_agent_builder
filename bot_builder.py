@@ -2,7 +2,7 @@
 from bot_prompt_template import BotPromptTemplate
 from chat_gpt import ChatGPT
 
-def initialize_bots(bot_list, assignment_description, api_keys):
+def initialize_bots(bot_list, assignment_description, api_key):
     created_bots = []
     
     for i, bot_params in enumerate(bot_list):
@@ -17,7 +17,7 @@ def initialize_bots(bot_list, assignment_description, api_keys):
 
         bot_prompt = bot.get_prompt()
 
-        gpt = ChatGPT(api_keys[i], bot_prompt, retries=5)
+        gpt = ChatGPT(api_key, bot_prompt, retries=5)
         
         chatbot = { "bot": bot, "gpt": gpt }
 

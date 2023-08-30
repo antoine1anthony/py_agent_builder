@@ -21,17 +21,9 @@ Setup
 
 ### API keys
 
-You'll need to provide API keys for each of the bots. These should be set as environment variables, named as follows:
+You'll need to provide a single API key for the bots. These should be set as environment variables, named as follows:
 
--   `OPENAI_API_KEY_CHATBOT1`
--   `OPENAI_API_KEY_CHATBOT2`
--   `OPENAI_API_KEY_CHATBOT3`
--   `OPENAI_API_KEY_CHATBOT4`
--   `OPENAI_API_KEY_CHATBOT5`
--   `OPENAI_API_KEY_CHATBOT6`
--   `OPENAI_API_KEY_CHATBOT7`
--   `OPENAI_API_KEY_CHATBOT8`
--   `OPENAI_API_KEY_CHATBOT9`
+-   `OPENAI_API_KEY_CHATBOT`
 
 We recommend using a `.env` file to store these variables. An example file is included in the repository.
 
